@@ -6,13 +6,19 @@ import { Food } from './food.model';
   template:`
   <h1>add a food</h1>
   <div>
-  <label>Enter Food Name</label>
-  <input #newName>
-  <label>Enter Food Description</label>
-  <input #newDescription>
-  <label>Enter Food Calories</label>
-  <input #newCalories>
-  <button (click)="submitForm(newName.value, newDescription.value, newCalories.value); newName.value=''; newDescription.value=''; newCalories.value='';">Add</button>
+    <div class="form-group">
+      <label>Enter Food Name</label>
+      <textarea #newName></textarea>
+    </div>
+    <div class="form-group">
+      <label>Enter Food Description</label>
+      <textarea #newDescription></textarea>
+    </div>
+    <div class="form-group">
+      <label>Enter Food Calories</label>
+      <textarea #newCalories></textarea>
+    </div>
+    <button (click)="submitForm(newName.value, newDescription.value, newCalories.value); newName.value=''; newDescription.value=''; newCalories.value='';">Add</button>
   </div>
   `
 })

@@ -46,8 +46,7 @@ export class AppComponent {
 
   addCalories(calories) {
     this.totalCalories += calories;
-    var randomHeight = Math.floor(Math.random()*800);
-    var randomWidth = Math.floor(Math.random()*800);
+    var randomHeight = Math.floor(Math.random()*1600);
     var randomEmoji = Math.floor(Math.random()*10);
     var randomSpeed = Math.floor(Math.random()*20-10)+10;
     var addEmojis = '<div class="emoji" style="position:absolute;top:'+randomHeight+'px;left:-100px;  animation: move '+randomSpeed+'s;"><h1>'+this.emojis[randomEmoji]+'</h1></div>';
