@@ -5,8 +5,9 @@ import { Food } from './food.model'
   selector: 'app-root',
   template: `
   <h1>My First Angular 2 App</h1>
-  <food-list [foods]='foods'></food-list>
+  <food-list [foods]='foods' (clickSender)='selectFood($event)'></food-list>
   <new-food (newFoodSender)='newFood($event)'></new-food>
+  <edit-food [selectedFood]='selectedFood' (clickSender)='finishedEditing()'></edit-food>
   `
 })
 
@@ -17,8 +18,18 @@ export class AppComponent {
     new Food('chicken-strips and garlic fries', 'the classic newell - chicken strips extra crispy', 950)
   ];
 
+  selectedFood = null;
+
   newFood(food) {
     this.foods.push(food);
+  }
+
+  finishedEditing() {
+    this.selectedFood = null;
+  }
+
+  selectFood(food) {
+    this.selectedFood = food;
   }
 
 }
