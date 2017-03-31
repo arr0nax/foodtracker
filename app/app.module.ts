@@ -3,10 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent }   from './app.component';
 import { FormsModule } from '@angular/forms';
 import { FoodListComponent } from './food-list.component'
+import { NewFoodComponent } from './new-food.component'
 
 @NgModule({
   imports: [BrowserModule, FormsModule],
-  declarations: [ AppComponent, FoodListComponent ],
+  declarations: [ AppComponent, FoodListComponent, NewFoodComponent ],
   bootstrap:    [ AppComponent ]
 })
 

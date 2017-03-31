@@ -6,6 +6,7 @@ import { Food } from './food.model'
   template: `
   <h1>My First Angular 2 App</h1>
   <food-list [foods]='foods'></food-list>
+  <new-food (newFoodSender)='newFood($event)'></new-food>
   `
 })
 
@@ -15,5 +16,9 @@ export class AppComponent {
     new Food('pizza-gravy-dinnner', 'a combination of old pizza and thanksgiving dinner gravy', 1100),
     new Food('chicken-strips and garlic fries', 'the classic newell - chicken strips extra crispy', 950)
   ];
+
+  newFood(food) {
+    this.foods.push(food);
+  }
 
 }
