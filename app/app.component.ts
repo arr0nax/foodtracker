@@ -4,7 +4,7 @@ import { Food } from './food.model'
 @Component({
   selector: 'app-root',
   template: `
-  <h1>My First Angular 2 App</h1>
+  <h1>FoodTracker</h1>
   <food-list [foods]='foods' (clickSender)='selectFood($event)'></food-list>
   <new-food (newFoodSender)='newFood($event)'></new-food>
   <edit-food [selectedFood]='selectedFood' (clickSender)='finishedEditing()'></edit-food>
