@@ -5,7 +5,8 @@ import { Food } from './food.model'
   selector: 'app-root',
   template: `
   <h1>FoodTracker</h1>
-  <food-list [foods]='foods' (clickSender)='selectFood($event)'></food-list>
+  <h1>Your Calories: {{totalCalories}}</h1>
+  <food-list [foods]='foods' (clickSender)='selectFood($event)' (calorieSender)='addCalories($event)'></food-list>
   <new-food (newFoodSender)='newFood($event)'></new-food>
   <edit-food [selectedFood]='selectedFood' (clickSender)='finishedEditing()'></edit-food>
   `
@@ -19,6 +20,7 @@ export class AppComponent {
   ];
 
   selectedFood = null;
+  totalCalories = 0;
 
   newFood(food) {
     this.foods.push(food);
@@ -30,6 +32,10 @@ export class AppComponent {
 
   selectFood(food) {
     this.selectedFood = food;
+  }
+
+  addCalories(calories) {
+    this.totalCalories += calories;
   }
 
 }

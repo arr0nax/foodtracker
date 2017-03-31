@@ -1,0 +1,17 @@
+body {
+  background-image: url('../img/hello.gif');
+  font-size: 40px;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1vw;
+}
+
+button {
+  height: 20vh;
+  width: 50vw;
+  font-size: 100px;
+  font-weight: bold;
+  color: white;
+  border: 4px solid white;
+  background-color: rgba(0, 0, 0, 0);
+}

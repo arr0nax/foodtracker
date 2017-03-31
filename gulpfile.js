@@ -61,12 +61,17 @@ gulp.task('bower', ['jsBower', 'cssBower']);
 
 ////////////////////// SASS //////////////////////
 
-gulp.task('sassBuild', function() {
+gulp.task('sassBuild', ['imgBuild'], function() {
   return gulp.src(['resources/styles/*'])
     .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./build/css'));
+});
+
+gulp.task('imgBuild', function() {
+  return gulp.src(['resources/images/*'])
+    .pipe(gulp.dest('./build/img'));
 });
 
 ////////////////////// SERVER //////////////////////
