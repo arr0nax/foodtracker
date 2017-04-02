@@ -41,7 +41,11 @@ export class AppComponent {
   }
 
   selectFood(food) {
-    this.selectedFood = food;
+    if(food === this.selectedFood) {
+      this.selectedFood = null;
+    } else {
+      this.selectedFood = food;
+    }
   }
 
   addCalories(calories) {
